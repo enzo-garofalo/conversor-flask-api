@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+{% block content %}
+<form action="{{ url_for('index') }}">
+
+    <button class="btn dolar" name="valor" type="submit" value="dolar">
+            Dolar
+    </button>
+
+    <button class="btn euro" name="valor" type="submit" value="euro">
+            Euro
+    </button>
+
+    <button class="btn btn-cop btn-lg btn-block mb-2" name="valor"  type="submit" value="bitcoin">
+            Bitcoin
+    </button>
+
+
+
+{% endblock content %}
