@@ -1,12 +1,14 @@
 {% extends "template.html" %}
 {% block content %}
-    <form action="{{ url_for('conversor') }}" method="post">
+<form action="{{ url_for('conversor') }}" method="post">
+        
+        {% from "macros.html" import render_select %}
+        <label>Converter de:</label>
+        {{ render_select('converter', 'converter', opcoes_json) }}
 
-        <select id='choice' name='choice' required>
-                <option value='' disabled selected hidden>Escolha a moeda</option>
-                {% for moeda, texto in opcoes_json.items() %}
-                        <option value="{{ moeda }}" name="moeda">{{ moeda }}: {{ texto }}</option>
-                {% endfor %}
-        </select>
+        <label class="para">Para:</label>
+        {{ render_select('para', 'para', opcoes_json )}}
+
+        <button class="btn" type="submit">Converter</button>
 
 {% endblock content %}
