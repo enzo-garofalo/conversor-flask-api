@@ -1,12 +1,16 @@
 from main import app
 from flask import render_template, request
-from models.api import opcoes_json
+from models.api import opcoes_moedas, resposta
 
 
 @app.route('/')
 def index():
+    opcoes_json = opcoes_moedas()
     return render_template('index.html', page_title='Conversor de Moedas', opcoes_json=opcoes_json)
 
 @app.route('/conversor', methods=['POST',])
 def conversor():
-    pass
+    de = request.form['converter']
+    para = request.form['para']
+    valor = resposta(de, para)
+    return render_template('resultado.html', page_title='Resultado', valor=valor)
