@@ -12,14 +12,20 @@ def opcoes_moedas():
         print(f'Erro {response.status_code}-{response.text}')
 
 def resposta(de, para):
-    url = f'https://economia.awesomeapi.com.br/last/{de}-{para}'
+    url = f'https://v6.exchangerate-api.com/v6/8f5faef8a07028db76435873/pair/{de}/{para}'
     response = requests.get(url)
 
     if response.status_code == 200:
         dados_conversao = response.json()
-        valor = dados_conversao[f'{de}{para}']['bid']
+        # print(dados_conversao)
+        valor = dados_conversao['conversion_rate']
+        print(valor)
+
+
+        
         return valor
-
     else:
-        print(f'Erro {response.status_code}-{response.text}')
+        menssagem = 'Não foi possível realizar a conversão'
+        return menssagem
 
+resposta('DOGE', 'BOB')
