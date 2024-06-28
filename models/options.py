@@ -1,4 +1,4 @@
-{
+moedas = {
     "AED": "UAE Dirham",
     "AFN": "Afghan Afghani",
     "ALL": "Albanian Lek",
