@@ -17,8 +17,11 @@
         <div id='welcome'>
           <p>{{page_title}}</p>
         </div>
+
         {% block content %}{% endblock content %}
-      
+        
+        <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+
       </div>
     
     </div>

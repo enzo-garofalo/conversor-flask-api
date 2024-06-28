@@ -1,16 +1,21 @@
-{% extends "template.html"%}
+{% extends "template.html" %}
 {% block content %}
     <div class="container">
         <div class="div1">
             <h2>{{ opcoes[de][1] }}</h2>
-            <h2>{{ opcoes[de][0]}} 1.00</h2>
+            <h3>{{ opcoes[de][0]}} 1.00</h3>
+            <input type="number" id="entrada" oninput="atualizarResultado()">
         </div>
         <div class="div2">
             <h2>{{ opcoes[para][1] }}</h2>
-            <h2>{{ opcoes[para][0]}} {{ valor }}</h2>
+            <div class="valor-container">
+                <h3>{{ opcoes[para][0] }}</h3>
+                <h3 id="valor">{{ valor }}</h3>
+            </div>
+            <h2 id="resultado">0</h2>
         </div>
     </div>
-    <a href="{{url_for('index')}}">
+    <a href="{{ url_for('index') }}">
         <button class='btn Voltar'>Voltar</button>
     </a>
 {% endblock content %}
