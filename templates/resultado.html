@@ -3,16 +3,28 @@
     <div class="container">
         <div class="div1">
             <h2>{{ opcoes[de][1] }}</h2>
-            <h3>{{ opcoes[de][0]}} 1.00</h3>
-            <input type="number" id="entrada" oninput="atualizarResultado()">
+            <h2>{{ opcoes[de][0] }} 1.00</h2>
+            <br>
+            <div class="result">
+                <h2>Digite um valor:</h2>
+                <input type="number" id="entrada" placeholder="{{ opcoes[de][0] }} 0.00"oninput="atualizarResultado()">
+            </div>
         </div>
         <div class="div2">
             <h2>{{ opcoes[para][1] }}</h2>
             <div class="valor-container">
-                <h3>{{ opcoes[para][0] }}</h3>
-                <h3 id="valor">{{ valor }}</h3>
+                <h2>{{ opcoes[para][0] }}</h2>
+                <h2 id="valor">{{ valor }}</h2>
             </div>
-            <h2 id="resultado">0</h2>
+            <br>
+            <br>
+            <div class="result">
+                <h2>Valor convertido:</h2>
+                <div class="valor-container mostrar-resultado">
+                    <h2>{{ opcoes[para][0] }}</h2>
+                    <h2 id="resultado">0</h2>
+                </div>
+            </div>
         </div>
     </div>
     <a href="{{ url_for('index') }}">
