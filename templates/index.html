@@ -5,10 +5,10 @@
         {% from "macros.html" import render_select %}
         
         <label>Converter de:</label>
-        {{ render_select('converter', 'converter', opcoes_json) }}
+        {{ render_select('converter', 'converter', opcoes) }}
 
         <label class="para">Para:</label>
-        {{ render_select('para', 'para', opcoes_json )}}
+        {{ render_select('para', 'para', opcoes )}}
 
         <button class="btn" type="submit">Converter</button>
 

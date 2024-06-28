@@ -2,6 +2,7 @@ from models.options import moedas
 import requests
 import json
 
+
 def opcoes_moedas():
     opcoes = moedas
     return opcoes

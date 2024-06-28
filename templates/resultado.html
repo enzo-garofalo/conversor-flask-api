@@ -1,7 +1,15 @@
 {% extends "template.html"%}
 {% block content %}
-    <h1>{{ valor }}</h1>
-
+    <div class="container">
+        <div class="div1">
+            <h2>{{ opcoes[de][1] }}</h2>
+            <h2>{{ opcoes[de][0]}} 1.00</h2>
+        </div>
+        <div class="div2">
+            <h2>{{ opcoes[para][1] }}</h2>
+            <h2>{{ opcoes[para][0]}} {{ valor }}</h2>
+        </div>
+    </div>
     <a href="{{url_for('index')}}">
         <button class='btn Voltar'>Voltar</button>
     </a>

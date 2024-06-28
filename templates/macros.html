@@ -2,7 +2,7 @@
     <select name="{{ name }}" id="{{ id }}" required>
         <option value='' disabled selected hidden>Escolha a moeda</option>
         {% for moeda, texto in options.items() %}
-            <option value="{{ moeda }}">{{ moeda }}: {{ texto }}</option>
+            <option value="{{ moeda }}">{{ moeda }}: {{ texto[1] }}</option>
         {% endfor %}
     </select>
 {% endmacro %}
